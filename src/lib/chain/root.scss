@@ -1,0 +1,23 @@
+#root {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.summaries_overlay {
+    background: black;
+    opacity: 0.5;
+    width: 33.33vw;
+    margin-left: 10px;
+    position: fixed;
+    height: 70px;
+    z-index: 100;
+    top: 0;
+    padding: 0;
+    &:first-of-type {
+        left: 0;
+    }
+    &:last-of-type {
+        left: 66.66vw;
+    }
+}

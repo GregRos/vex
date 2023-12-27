@@ -7,7 +7,7 @@ tsconfig.*
 .gitattributes
 .prettierignore
 .editorconfig
-.prettierrc.js
+.prettierrc.cjs
 npm-debug.log
 yarn-error.log
 .github/
@@ -16,7 +16,7 @@ yarn-error.log
 coverage
 .idea/
 .git/
-.eslintrc.js
+.eslintrc.cjs
 .obsidian/
 .vscode/
 *.svg

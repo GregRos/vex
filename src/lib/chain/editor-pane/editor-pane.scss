@@ -1,0 +1,30 @@
+@import "../colors";
+.editor-pane {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    z-index: 1000;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+    .editor-wrapper {
+        display: none;
+        width: calc(100vw / 3);
+    }
+    &--expanded {
+        background: $sender-you;
+        .editor-wrapper {
+            display: block;
+        }
+    }
+}
+
+.drag-bar {
+    height: 100%;
+    width: 10px;
+    margin: 0;
+    padding: 0;
+    background: green;
+}

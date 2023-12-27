@@ -5,12 +5,15 @@
     "declarationMap": true,
     "noImplicitAny": true,
     "outDir": "../../dist/lib",
+    "lib": ["es2022", "dom"],
     "rootDir": ".",
     "allowJs": true,
-    "strict": true
+    "strict": true,
+    "jsx": "react"
   },
   "include": [
     "**/*.ts",
+    "**/*.tsx",
     "**/*.js"
   ]
 }

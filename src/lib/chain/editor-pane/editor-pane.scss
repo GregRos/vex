@@ -9,13 +9,14 @@
     margin: 0;
     padding: 0;
     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
-    .editor-wrapper {
+    & > :first-child {
         display: none;
         width: calc(100vw / 3);
     }
+
     &--expanded {
         background: $sender-you;
-        .editor-wrapper {
+        & > :first-child {
             display: block;
         }
     }

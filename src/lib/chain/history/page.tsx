@@ -6,13 +6,11 @@ export interface ChainPageProps {
     message: Message;
 }
 
-export default function Page({
-    message: { fullText, sender }
-}: ChainPageProps) {
+export default function Page({ message: { text, sender } }: ChainPageProps) {
     const senderClass = sender === "you" ? "sender--you" : "sender--them";
     return (
         <div className={`page ${senderClass}`}>
-            <Viewer text={fullText} />
+            <Viewer text={text} />
         </div>
     );
 }

@@ -12,13 +12,6 @@ export interface Timing {
     end: Dayjs;
 }
 
-export interface ChainPos {
-    // branch points from trunk
-    branchings: number;
-    // vertical layering
-    layer: number;
-}
-
 export interface Chain {
     uid: ChainUid;
     root: Message;
@@ -27,13 +20,14 @@ export interface Chain {
 
 export interface Message {
     uid: MessageUid;
-    chain: Chain;
-    seq: number;
     sender: Sender;
     timing: Timing;
-    fullText: string;
-    summaryText: string;
+    text: string;
 }
+
+export type PagePane = {
+    summaries: Map<MessageUid, Message>;
+};
 
 export type Sender = Bot | "you";
 

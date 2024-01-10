@@ -76,4 +76,5 @@ jspm_packages
 
 www/
 .parcel-cache
-.obsidian/workspace.json
+.vault/.obsidian/workspace.json
+.parcel-cache/

@@ -69,7 +69,6 @@ export function generateMessages() {
         (x, i) =>
             ({
                 ...x,
-                chain: null! as Chain,
                 timing: {
                     start: dayjs(),
                     end: dayjs().add(1, "hour")
@@ -81,18 +80,8 @@ export function generateMessages() {
                               name: "Bot",
                               uid: "bot-uid"
                           }
-            }) satisfies Message
+            } satisfies Message)
     );
-
-    const chain: Chain = {
-        root: fullMessages[0],
-        tip: fullMessages[fullMessages.length - 1],
-        uid: "chain-uid"
-    };
-
-    for (const x of fullMessages) {
-        x.chain = chain;
-    }
 
     return fullMessages;
 }

@@ -1,81 +1,79 @@
 {
-  "name": "chat-ui",
-  "exports": {
-    ".": {
-      "require": "./dist/lib/index.js",
-      "import": "./dist/lib/index.js",
-      "default": "./dist/lib/index.js",
-      "types": "./dist/lib/index.d.ts"
+    "name": "vex",
+    "exports": {
+        ".": {
+            "require": "./dist/lib/index.js",
+            "import": "./dist/lib/index.js",
+            "default": "./dist/lib/index.js",
+            "types": "./dist/lib/index.d.ts"
+        }
+    },
+    "typings": "dist/lib/index",
+    "description": "Next-iteration of conversation UI",
+    "version": "0.1.0",
+    "main": "dist/lib/index.js",
+    "repository": "github:gregros/vex",
+    "scripts": {
+        "build": "tsc -b tsconfig.all.json",
+        "clean": "shx rm -rf dist",
+        "rebuild": "run-s clean build",
+        "prepare": "husky install",
+        "lint:fix": "prettier --write src/**/*.ts && eslint --fix src/**/*.ts",
+        "lint:check": "prettier --check src/**/*.ts && eslint src/**/*.ts",
+        "test": "jest --coverage",
+        "watch": "parcel src/index.html --dist-dir=www"
+    },
+    "@parcel/resolver-default": {
+        "PackageExports": true
+    },
+    "keywords": [
+        "bot",
+        "ui"
+    ],
+    "type": "module",
+    "author": "GregRos",
+    "license": "MIT",
+    "lint-staged": {
+        "*.{ts,js,mjs,mts,cjs,cts}": "node_modules/.bin/eslint --cache --fix",
+        "*.{ts,js,mts,mjs,cts,cjs,css,md,yml,yaml,json}": "node_modules/.bin/prettier --write"
+    },
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.10.3",
+        "@types/jest": "^29.5.11",
+        "@types/lodash": "^4.14.202",
+        "@types/node": "^20.10.3",
+        "@types/react": "^18.2.42",
+        "@types/react-dom": "^18.2.17",
+        "@typescript-eslint/eslint-plugin": "^6.13.2",
+        "@typescript-eslint/parser": "^6.13.2",
+        "eslint": "^8.55.0",
+        "husky": "^8.0.3",
+        "jest": "^29.7.0",
+        "lint-staged": "^15.2.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^2.8.8",
+        "process": "^0.11.10",
+        "shx": "^0.3.4",
+        "ts-jest": "^29.1.1",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.3.2",
+        "parcel": "^2.10.3",
+        "sass": "^1.69.5"
+    },
+    "dependencies": {
+        "@gregros/eslint-config": "^0.4.1",
+        "@remirror/react": "^2.0.35",
+        "@remirror/react-editors": "^1.0.40",
+        "@uiw/react-md-editor": "^4.0.2",
+        "@use-gesture/react": "^10.3.0",
+        "dayjs": "^1.11.10",
+        "framer-motion": "^10.16.16",
+        "lodash": "^4.17.21",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-spring": "^9.7.3",
+        "react-virtualized": "^9.22.5",
+        "remirror": "^2.0.38",
+        "rxjs": "^7.8.1"
     }
-  },
-  "typings": "dist/lib/index",
-  "description": "A chatbot conversation UI",
-  "version": "0.1.0",
-  "main": "dist/lib/index.js",
-  "repository": "github:gregros/chat-ui",
-  "scripts": {
-    "build": "tsc -b tsconfig.all.json",
-    "clean": "shx rm -rf dist",
-    "rebuild": "run-s clean build",
-    "prepare": "husky install",
-    "lint:fix": "prettier --write src/**/*.ts && eslint --fix src/**/*.ts",
-    "lint:check": "prettier --check src/**/*.ts && eslint src/**/*.ts",
-    "test": "jest --coverage",
-    "watch": "parcel src/index.html --dist-dir=www"
-  },
-  "@parcel/resolver-default": {
-    "PackageExports": true
-  },
-  "keywords": [
-    "bot",
-    "ui"
-  ],
-  "type": "module",
-  "author": "GregRos",
-  "license": "MIT",
-  "lint-staged": {
-    "*.{ts,js,mjs,mts,cjs,cts}": "node_modules/.bin/eslint --cache --fix",
-    "*.{ts,js,mts,mjs,cts,cjs,css,md,yml,yaml,json}": "node_modules/.bin/prettier --write"
-  },
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.10.3",
-    "@types/jest": "^29.5.11",
-    "@types/lodash": "^4.14.202",
-    "@types/node": "^20.10.3",
-    "@typescript-eslint/eslint-plugin": "^6.13.2",
-    "@typescript-eslint/parser": "^6.13.2",
-    "eslint": "^8.55.0",
-    "husky": "^8.0.3",
-    "jest": "^29.7.0",
-    "lint-staged": "^15.2.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.8",
-    "process": "^0.11.10",
-    "shx": "^0.3.4",
-    "ts-jest": "^29.1.1",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.3.2"
-  },
-  "dependencies": {
-    "@remirror/react": "^2.0.35",
-    "@remirror/react-editors": "^1.0.40",
-    "@types/react": "^18.2.42",
-    "@types/react-dom": "^18.2.17",
-    "@uiw/react-md-editor": "^4.0.2",
-    "@use-gesture/react": "^10.3.0",
-    "dayjs": "^1.11.10",
-    "esbuild": "^0.19.8",
-    "esbuild-sass-plugin": "^2.16.0",
-    "framer-motion": "^10.16.16",
-    "lodash": "^4.17.21",
-    "node-sass": "^9.0.0",
-    "parcel": "^2.10.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-spring": "^9.7.3",
-    "react-virtualized": "^9.22.5",
-    "remirror": "^2.0.38",
-    "rxjs": "^7.8.1",
-    "sass": "^1.69.5"
-  }
 }

@@ -22,7 +22,8 @@ export interface Message {
     uid: MessageUid;
     sender: Sender;
     timing: Timing;
-    text: string;
+    summaryText: string;
+    fullText: string;
 }
 
 export type PagePane = {

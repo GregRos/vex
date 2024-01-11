@@ -32,7 +32,7 @@
     ],
     "type": "module",
     "author": "GregRos",
-    "license": "MIT",
+    "license": "GPL-3.0-only",
     "lint-staged": {
         "*.{ts,js,mjs,mts,cjs,cts}": "node_modules/.bin/eslint --cache --fix",
         "*.{ts,js,mts,mjs,cts,cjs,css,md,yml,yaml,json}": "node_modules/.bin/prettier --write"

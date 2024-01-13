@@ -3,5 +3,6 @@
   "obsidian-excalidraw-plugin",
   "url-into-selection",
   "obsidian-style-settings",
-  "cm-editor-syntax-highlight-obsidian"
+  "cm-editor-syntax-highlight-obsidian",
+  "obsidian-kanban"
 ]
